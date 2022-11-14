@@ -1,0 +1,807 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;0,400;0,500;0,600;1,100;1,300&display=swap");
+
+* {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  text-transform: capitalize;
+  transition: 0.3s linear;
+}
+
+$green: #219150;
+$black: #10221b;
+$white: #fff;
+$grey: #787878;
+$yellow: #ffff33;
+$dark_yellow: #ffcc33;
+$light-bg: #eee;
+$blue: #3399ff;
+$border: 0.2rem solid $white;
+$box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+
+html {
+  font-size: 62.5%; //so 1rem = 10px
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+
+  &::-webkit-scrollbar {
+    width: 1rem;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: #fff;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: $black;
+  }
+}
+
+@mixin grid($val) {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax($val, 1fr));
+  gap: 1.5rem;
+}
+
+section {
+  padding: 5rem 9%;
+}
+
+/**************** BUTTON STYLE *******************/
+
+.btn {
+  margin-top: 1rem;
+  display: inline-block;
+  border: $border;
+  color: $white;
+  cursor: pointer;
+  background: none;
+  font-size: 1.7rem;
+  padding: 1rem 5rem;
+
+  &:hover {
+    background: $white;
+    color: $black;
+  }
+}
+
+/******************** SECTIONS HEADING STYLE **********************/
+
+.section-heading {
+  text-align: center;
+  margin-bottom: 2.5rem;
+  font-size: 4rem;
+  color: $black;
+}
+
+/**************** HEADER **************************/
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 2rem 9%;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+
+  &.active {
+    background-color: $dark_yellow;
+    box-shadow: $box-shadow;
+  }
+
+  .logo {
+    margin-right: auto;
+    font-size: 2.5rem;
+    font-weight: bolder;
+    color: $white;
+
+    i {
+      color: $white;
+    }
+  }
+
+  .menu {
+    &.active {
+      background-color: $black;
+    }
+
+    a {
+      margin-left: 2rem;
+      font-size: 1.7rem;
+      color: $white;
+
+      &:hover {
+        color: $green;
+      }
+    }
+  }
+
+  #menu-close {
+    font-size: 5rem;
+    cursor: pointer;
+    color: $white;
+    display: none;
+  }
+
+  .menu-icons a,
+  .menu-icons div {
+    font-size: 2.5rem;
+    margin-left: 2rem;
+    cursor: pointer;
+    color: $white;
+
+    &:hover {
+      color: $green;
+    }
+  }
+
+  #menu-btn {
+    display: none;
+  }
+}
+
+/************************* SEARCH FORM ***************************/
+
+.search-form {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+  transform: translateY(-110%);
+
+  &.active {
+    transform: translateY(0%);
+  }
+
+  #close-search {
+    position: absolute;
+    top: 1.5rem;
+    right: 2.5rem;
+    cursor: pointer;
+    color: $white;
+    font-size: 6rem;
+
+    &:hover {
+      color: $green;
+    }
+  }
+
+  form {
+    width: 70rem;
+    margin: 0 2rem;
+    padding: 0 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 0.2rem solid $white;
+    display: flex;
+    align-items: center;
+
+    input {
+      width: 100%;
+      font-size: 2rem;
+      color: $white;
+      text-transform: none;
+      background: none;
+      padding-right: 2rem;
+
+      &::placeholder {
+        color: #aaa;
+      }
+    }
+
+    label {
+      font-size: 3rem;
+      cursor: pointer;
+      color: $white;
+
+      &:hover {
+        color: $green;
+      }
+    }
+  }
+}
+
+/****************************HOME SLIDER *******************************************/
+
+.home {
+  padding: 0;
+
+  .box {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background-size: cover !important;
+    background-position: center !important;
+    justify-content: flex-end;
+    padding: 2rem 9%;
+
+    &.second {
+      justify-content: flex-start;
+
+      h3 {
+        color: $yellow;
+      }
+    }
+
+    &.forth {
+      justify-content: flex-start;
+      .content {
+        h3 {
+          color: $blue;
+        }
+      }
+    }
+
+    &.fifth {
+      justify-content: flex-end;
+    }
+
+    .content {
+      width: 70rem;
+      background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
+      padding: 2rem;
+      border-radius: 10px;
+    }
+
+    span {
+      font-size: 4rem;
+      color: $white;
+    }
+
+    h3 {
+      font-size: 6rem;
+      color: $green;
+      padding-top: 0.5rem;
+      text-transform: uppercase;
+    }
+
+    p {
+      line-height: 2;
+      color: $white;
+      font-size: 1.5rem;
+      padding: 1rem 0;
+      text-transform: none;
+    }
+  }
+}
+
+/**************** SWIPER ARROWS STYLE ******************************/
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  font-size: 3rem;
+  padding: 2rem;
+  color: $white;
+  background-image: linear-gradient(
+    rgba(255, 255, 255, 0.4),
+    rgba(255, 255, 255, 0.4)
+  );
+}
+
+/******************* PAGINATION STYLE **************************/
+
+.swiper-pagination-bullet {
+  width: 1rem;
+  height: 1rem;
+  text-align: center;
+  opacity: 1;
+  background: $white;
+}
+
+.swiper-pagination-bullet-active {
+  background: $black;
+}
+
+/************************** LUOGHI SECTION **********************************/
+
+.luoghi {
+  .box-container {
+    @include grid(53rem);
+
+    .box {
+      text-align: center;
+      padding: 3rem;
+
+      img {
+        height: 20rem;
+        width: 20rem;
+        border-radius: 50%;
+        margin-bottom: 1rem;
+      }
+
+      h3 {
+        font-size: 2rem;
+        color: $green;
+      }
+
+      p {
+        font-size: 1.5rem;
+        color: $black;
+        padding: 1rem;
+        line-height: 2;
+        text-transform: none;
+      }
+
+      .btn {
+        border-color: $black;
+        color: $black;
+
+        &:hover {
+          color: $white;
+          background: $black;
+        }
+      }
+    }
+  }
+}
+
+/******************************ABOUT SECTION **********************/
+
+.storia {
+  background: $light-bg;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+
+  .image {
+    flex: 1 1 42rem;
+    padding-right: 5rem;
+    padding-bottom: 5rem;
+
+    img {
+      width: 100%;
+      box-shadow: 4rem 4rem 0 rgba(0, 0, 0, 0.1);
+    }
+  }
+
+  .content {
+    flex: 1 1 42rem;
+  }
+
+  h3 {
+    font-size: 3rem;
+    color: $green;
+  }
+
+  p {
+    font-size: 1.5rem;
+    color: $black;
+    padding: 1rem 0;
+    line-height: 2;
+  }
+
+  .btn {
+    border-color: $black;
+    color: $black;
+
+    &:hover {
+      background-color: $black;
+      color: $white;
+    }
+  }
+}
+
+/*********************RISTORANTI SECTION **************************/
+
+.ristoranti {
+  .slide {
+    margin-top: 3rem;
+    width: 35rem;
+    border: $border;
+
+    &:hover .image .icons {
+      transform: translateY(0);
+    }
+
+    .image {
+      position: relative;
+      overflow: hidden;
+      height: 30rem;
+      width: 100%;
+
+      img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+      }
+
+      .icons {
+        width: 100%;
+        position: absolute;
+        bottom: 2rem;
+        text-align: center;
+        z-index: 10;
+        transform: translateY(7rem);
+
+        a {
+          height: 4.5rem;
+          width: 4.5rem;
+          line-height: 4.5rem;
+          font-size: 1.7rem;
+          background: $black;
+          color: $white;
+          margin: 0 0.2rem;
+
+          &:hover {
+            background: $white;
+            color: $black;
+          }
+        }
+      }
+    }
+
+    .content {
+      padding: 1rem 0;
+      text-align: center;
+
+      h3 {
+        font-size: 2rem;
+        color: $black;
+      }
+
+      .price {
+        padding: 1rem 0;
+        font-size: 2.5rem;
+        color: $black;
+        font-style: italic;
+        font-weight: 700;
+      }
+
+      .stars i {
+        font-size: 1.7rem;
+        color: $dark_yellow;
+      }
+    }
+  }
+
+  .swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
+    background-color: $dark_yellow;
+  }
+}
+
+/*************************** CURIOSITA' SECTION ***********************************/
+
+.curiosita {
+  background: $light-bg;
+
+  .box-container {
+    @include grid(32rem);
+
+    .box {
+      text-align: center;
+      background: $white;
+      border: $border;
+      box-shadow: $box-shadow;
+      border-radius: 0.5rem;
+
+      &:hover {
+        background: $black;
+
+        .content > * {
+          color: $white;
+        }
+
+        .btn {
+          border-color: $white;
+
+          &:hover {
+            color: $black;
+            background-color: $white;
+          }
+        }
+      }
+    }
+  }
+
+  .image {
+    height: 25rem;
+    overflow: hidden;
+    padding: 2rem;
+    padding-bottom: 0;
+    border-radius: 0.5rem;
+
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      border-radius: 0.5rem;
+    }
+  }
+
+  .content {
+    padding: 2rem;
+
+    h3 {
+      font-size: 2rem;
+      color: $black;
+    }
+
+    p {
+      font-size: 1.5rem;
+      color: $black;
+      padding: 1rem 0;
+      line-height: 2;
+      text-transform: none;
+    }
+
+    .price {
+      font-size: 2rem;
+      color: $green;
+    }
+  }
+}
+
+/******************************** RECENSIONI SECTION ********************************/
+
+.recensioni {
+  .slide {
+    .text {
+      padding: 2rem;
+      margin-bottom: 3rem;
+      font-size: 1.6rem;
+      background: $light-bg;
+      border-radius: 0.5rem;
+      color: $black;
+      text-transform: none;
+      line-height: 2;
+      position: relative;
+      top: 2rem;
+      z-index: 0;
+
+      &::before {
+        content: "";
+        position: absolute;
+        bottom: -1.5rem;
+        left: 0.7rem;
+        height: 3rem;
+        width: 3rem;
+        background: $light-bg;
+        transform: rotate(45deg);
+      }
+    }
+
+    .user {
+      margin-top: 4rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+
+      img {
+        height: 7rem;
+        width: 7rem;
+        border-radius: 50%;
+      }
+
+      h3 {
+        font-size: 2rem;
+        color: $black;
+      }
+
+      span {
+        color: $green;
+        font-size: 1.5rem;
+      }
+    }
+  }
+}
+
+.swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
+  background-color: $green;
+}
+
+/********************* NEWSLETTER SECTION *********************/
+
+.newsletter {
+  background: $light-bg;
+
+  .content {
+    max-width: 70rem;
+    margin: 1rem auto;
+    text-align: center;
+
+    p {
+      font-size: 1.5rem;
+      line-height: 2;
+      color: $black;
+    }
+
+    form {
+      margin-top: 2rem;
+      background: $white;
+      border-radius: 5rem;
+      border: $border;
+      padding: 0.7rem;
+      display: flex;
+    }
+
+    .email {
+      width: 100%;
+      background: none;
+      text-transform: none;
+      font-size: 1.5rem;
+      color: $black;
+      padding: 0 1.3rem;
+    }
+
+    .btn {
+      margin-top: 0;
+      border-radius: 5rem;
+      background: $black;
+      color: $white;
+
+      &:hover {
+        background: none;
+        border: 2px solid $black;
+        color: $black;
+      }
+    }
+  }
+}
+
+/************************ FOOTER ******************************/
+
+footer {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url(../images/monviso.jpg);
+  background-size: cover;
+  background-position: top;
+  background-attachment: fixed;
+  padding: 5rem 9%;
+
+  .box-container {
+    @include grid(25rem);
+
+    .box {
+      text-align: center;
+      h3 {
+        font-size: 2rem;
+        padding: 1.5rem 0;
+        color: $white;
+      }
+
+      a {
+        display: block;
+        font-size: 1.4rem;
+        color: $white;
+        padding: 1rem 0;
+
+        i {
+          color: $green;
+          padding-right: 0.5rem;
+        }
+
+        &:hover {
+          color: $green;
+
+          i {
+            padding-right: 2rem;
+          }
+        }
+      }
+    }
+
+    .email {
+      text-transform: lowercase;
+    }
+  }
+
+  .credit {
+    text-align: center;
+    margin-top: 2.5rem;
+    padding: 1rem;
+    padding-top: 2.5rem;
+    font-size: 2rem;
+    color: $white;
+
+    span {
+      color: $green;
+    }
+  }
+}
+
+/**************************** MEDIA QUERIS *************************************/
+
+@media (max-width: 1200px) {
+  .header {
+    padding: 2rem;
+  }
+
+  section {
+    padding: 3rem 2rem;
+  }
+}
+
+@media (max-width: 991px) {
+  html {
+    font-size: 55%;
+  }
+
+  .home .box {
+    padding: 2rem;
+    justify-content: center;
+
+    &.second,
+    &.forth {
+      justify-content: center;
+    }
+
+    .content {
+      text-align: center;
+
+      span {
+        font-size: 3rem;
+      }
+
+      h3 {
+        font-size: 4rem;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    #menu-btn {
+      display: inline-block;
+    }
+
+    .menu {
+      position: fixed;
+      top: 0;
+      left: -110%;
+      background: $white;
+      z-index: 1000;
+      width: 35rem;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      &.active {
+        left: 0;
+        box-shadow: 0 0 0 100vw rgba(0, 0, 0, 0.8);
+        transition: all 1s;
+      }
+
+      a {
+        margin: 1rem 0;
+        font-size: 3rem;
+      }
+
+      #menu-close {
+        display: inline-block;
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+      }
+    }
+  }
+  .swiper-button-next::after,
+  .swiper-button-prev::after {
+    display: none;
+  }
+}
+
+@media (max-width: 450px) {
+  html {
+    font-size: 40%;
+  }
+
+  .section-heading {
+    font-size: 3rem;
+  }
+}

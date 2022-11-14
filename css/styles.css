@@ -1,0 +1,669 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;0,400;0,500;0,600;1,100;1,300&display=swap");
+* {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  text-transform: capitalize;
+  transition: 0.3s linear;
+}
+
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
+html::-webkit-scrollbar {
+  width: 1rem;
+}
+html::-webkit-scrollbar-track {
+  background: #fff;
+}
+html::-webkit-scrollbar-thumb {
+  background: #10221b;
+}
+
+section {
+  padding: 5rem 9%;
+}
+
+/**************** BUTTON STYLE *******************/
+.btn {
+  margin-top: 1rem;
+  display: inline-block;
+  border: 0.2rem solid #fff;
+  color: #fff;
+  cursor: pointer;
+  background: none;
+  font-size: 1.7rem;
+  padding: 1rem 5rem;
+}
+.btn:hover {
+  background: #fff;
+  color: #10221b;
+}
+
+/******************** SECTIONS HEADING STYLE **********************/
+.section-heading {
+  text-align: center;
+  margin-bottom: 2.5rem;
+  font-size: 4rem;
+  color: #10221b;
+}
+
+/**************** HEADER **************************/
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 2rem 9%;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+}
+.header.active {
+  background-color: #ffcc33;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+}
+.header .logo {
+  margin-right: auto;
+  font-size: 2.5rem;
+  font-weight: bolder;
+  color: #fff;
+}
+.header .logo i {
+  color: #fff;
+}
+.header .menu.active {
+  background-color: #10221b;
+}
+.header .menu a {
+  margin-left: 2rem;
+  font-size: 1.7rem;
+  color: #fff;
+}
+.header .menu a:hover {
+  color: #219150;
+}
+.header #menu-close {
+  font-size: 5rem;
+  cursor: pointer;
+  color: #fff;
+  display: none;
+}
+.header .menu-icons a,
+.header .menu-icons div {
+  font-size: 2.5rem;
+  margin-left: 2rem;
+  cursor: pointer;
+  color: #fff;
+}
+.header .menu-icons a:hover,
+.header .menu-icons div:hover {
+  color: #219150;
+}
+.header #menu-btn {
+  display: none;
+}
+
+/************************* SEARCH FORM ***************************/
+.search-form {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+  transform: translateY(-110%);
+}
+.search-form.active {
+  transform: translateY(0%);
+}
+.search-form #close-search {
+  position: absolute;
+  top: 1.5rem;
+  right: 2.5rem;
+  cursor: pointer;
+  color: #fff;
+  font-size: 6rem;
+}
+.search-form #close-search:hover {
+  color: #219150;
+}
+.search-form form {
+  width: 70rem;
+  margin: 0 2rem;
+  padding: 0 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 0.2rem solid #fff;
+  display: flex;
+  align-items: center;
+}
+.search-form form input {
+  width: 100%;
+  font-size: 2rem;
+  color: #fff;
+  text-transform: none;
+  background: none;
+  padding-right: 2rem;
+}
+.search-form form input::-moz-placeholder {
+  color: #aaa;
+}
+.search-form form input:-ms-input-placeholder {
+  color: #aaa;
+}
+.search-form form input::placeholder {
+  color: #aaa;
+}
+.search-form form label {
+  font-size: 3rem;
+  cursor: pointer;
+  color: #fff;
+}
+.search-form form label:hover {
+  color: #219150;
+}
+
+/****************************HOME SLIDER *******************************************/
+.home {
+  padding: 0;
+}
+.home .box {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background-size: cover !important;
+  background-position: center !important;
+  justify-content: flex-end;
+  padding: 2rem 9%;
+}
+.home .box.second {
+  justify-content: flex-start;
+}
+.home .box.second h3 {
+  color: #ffff33;
+}
+.home .box.forth {
+  justify-content: flex-start;
+}
+.home .box.forth .content h3 {
+  color: #3399ff;
+}
+.home .box.fifth {
+  justify-content: flex-end;
+}
+.home .box .content {
+  width: 70rem;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
+  padding: 2rem;
+  border-radius: 10px;
+}
+.home .box span {
+  font-size: 4rem;
+  color: #fff;
+}
+.home .box h3 {
+  font-size: 6rem;
+  color: #219150;
+  padding-top: 0.5rem;
+  text-transform: uppercase;
+}
+.home .box p {
+  line-height: 2;
+  color: #fff;
+  font-size: 1.5rem;
+  padding: 1rem 0;
+  text-transform: none;
+}
+
+/**************** SWIPER ARROWS STYLE ******************************/
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  font-size: 3rem;
+  padding: 2rem;
+  color: #fff;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4));
+}
+
+/******************* PAGINATION STYLE **************************/
+.swiper-pagination-bullet {
+  width: 1rem;
+  height: 1rem;
+  text-align: center;
+  opacity: 1;
+  background: #fff;
+}
+
+.swiper-pagination-bullet-active {
+  background: #10221b;
+}
+
+/************************** LUOGHI SECTION **********************************/
+.luoghi .box-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(53rem, 1fr));
+  gap: 1.5rem;
+}
+.luoghi .box-container .box {
+  text-align: center;
+  padding: 3rem;
+}
+.luoghi .box-container .box img {
+  height: 20rem;
+  width: 20rem;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+}
+.luoghi .box-container .box h3 {
+  font-size: 2rem;
+  color: #219150;
+}
+.luoghi .box-container .box p {
+  font-size: 1.5rem;
+  color: #10221b;
+  padding: 1rem;
+  line-height: 2;
+  text-transform: none;
+}
+.luoghi .box-container .box .btn {
+  border-color: #10221b;
+  color: #10221b;
+}
+.luoghi .box-container .box .btn:hover {
+  color: #fff;
+  background: #10221b;
+}
+
+/******************************ABOUT SECTION **********************/
+.storia {
+  background: #eee;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+.storia .image {
+  flex: 1 1 42rem;
+  padding-right: 5rem;
+  padding-bottom: 5rem;
+}
+.storia .image img {
+  width: 100%;
+  box-shadow: 4rem 4rem 0 rgba(0, 0, 0, 0.1);
+}
+.storia .content {
+  flex: 1 1 42rem;
+}
+.storia h3 {
+  font-size: 3rem;
+  color: #219150;
+}
+.storia p {
+  font-size: 1.5rem;
+  color: #10221b;
+  padding: 1rem 0;
+  line-height: 2;
+}
+.storia .btn {
+  border-color: #10221b;
+  color: #10221b;
+}
+.storia .btn:hover {
+  background-color: #10221b;
+  color: #fff;
+}
+
+/*********************RISTORANTI SECTION **************************/
+.ristoranti .slide {
+  margin-top: 3rem;
+  width: 35rem;
+  border: 0.2rem solid #fff;
+}
+.ristoranti .slide:hover .image .icons {
+  transform: translateY(0);
+}
+.ristoranti .slide .image {
+  position: relative;
+  overflow: hidden;
+  height: 30rem;
+  width: 100%;
+}
+.ristoranti .slide .image img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.ristoranti .slide .image .icons {
+  width: 100%;
+  position: absolute;
+  bottom: 2rem;
+  text-align: center;
+  z-index: 10;
+  transform: translateY(7rem);
+}
+.ristoranti .slide .image .icons a {
+  height: 4.5rem;
+  width: 4.5rem;
+  line-height: 4.5rem;
+  font-size: 1.7rem;
+  background: #10221b;
+  color: #fff;
+  margin: 0 0.2rem;
+}
+.ristoranti .slide .image .icons a:hover {
+  background: #fff;
+  color: #10221b;
+}
+.ristoranti .slide .content {
+  padding: 1rem 0;
+  text-align: center;
+}
+.ristoranti .slide .content h3 {
+  font-size: 2rem;
+  color: #10221b;
+}
+.ristoranti .slide .content .price {
+  padding: 1rem 0;
+  font-size: 2.5rem;
+  color: #10221b;
+  font-style: italic;
+  font-weight: 700;
+}
+.ristoranti .slide .content .stars i {
+  font-size: 1.7rem;
+  color: #ffcc33;
+}
+.ristoranti .swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
+  background-color: #ffcc33;
+}
+
+/*************************** CURIOSITA' SECTION ***********************************/
+.curiosita {
+  background: #eee;
+}
+.curiosita .box-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(32rem, 1fr));
+  gap: 1.5rem;
+}
+.curiosita .box-container .box {
+  text-align: center;
+  background: #fff;
+  border: 0.2rem solid #fff;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  border-radius: 0.5rem;
+}
+.curiosita .box-container .box:hover {
+  background: #10221b;
+}
+.curiosita .box-container .box:hover .content > * {
+  color: #fff;
+}
+.curiosita .box-container .box:hover .btn {
+  border-color: #fff;
+}
+.curiosita .box-container .box:hover .btn:hover {
+  color: #10221b;
+  background-color: #fff;
+}
+.curiosita .image {
+  height: 25rem;
+  overflow: hidden;
+  padding: 2rem;
+  padding-bottom: 0;
+  border-radius: 0.5rem;
+}
+.curiosita .image img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 0.5rem;
+}
+.curiosita .content {
+  padding: 2rem;
+}
+.curiosita .content h3 {
+  font-size: 2rem;
+  color: #10221b;
+}
+.curiosita .content p {
+  font-size: 1.5rem;
+  color: #10221b;
+  padding: 1rem 0;
+  line-height: 2;
+  text-transform: none;
+}
+.curiosita .content .price {
+  font-size: 2rem;
+  color: #219150;
+}
+
+/******************************** RECENSIONI SECTION ********************************/
+.recensioni .slide .text {
+  padding: 2rem;
+  margin-bottom: 3rem;
+  font-size: 1.6rem;
+  background: #eee;
+  border-radius: 0.5rem;
+  color: #10221b;
+  text-transform: none;
+  line-height: 2;
+  position: relative;
+  top: 2rem;
+  z-index: 0;
+}
+.recensioni .slide .text::before {
+  content: "";
+  position: absolute;
+  bottom: -1.5rem;
+  left: 0.7rem;
+  height: 3rem;
+  width: 3rem;
+  background: #eee;
+  transform: rotate(45deg);
+}
+.recensioni .slide .user {
+  margin-top: 4rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.recensioni .slide .user img {
+  height: 7rem;
+  width: 7rem;
+  border-radius: 50%;
+}
+.recensioni .slide .user h3 {
+  font-size: 2rem;
+  color: #10221b;
+}
+.recensioni .slide .user span {
+  color: #219150;
+  font-size: 1.5rem;
+}
+
+.swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
+  background-color: #219150;
+}
+
+/********************* NEWSLETTER SECTION *********************/
+.newsletter {
+  background: #eee;
+}
+.newsletter .content {
+  max-width: 70rem;
+  margin: 1rem auto;
+  text-align: center;
+}
+.newsletter .content p {
+  font-size: 1.5rem;
+  line-height: 2;
+  color: #10221b;
+}
+.newsletter .content form {
+  margin-top: 2rem;
+  background: #fff;
+  border-radius: 5rem;
+  border: 0.2rem solid #fff;
+  padding: 0.7rem;
+  display: flex;
+}
+.newsletter .content .email {
+  width: 100%;
+  background: none;
+  text-transform: none;
+  font-size: 1.5rem;
+  color: #10221b;
+  padding: 0 1.3rem;
+}
+.newsletter .content .btn {
+  margin-top: 0;
+  border-radius: 5rem;
+  background: #10221b;
+  color: #fff;
+}
+.newsletter .content .btn:hover {
+  background: none;
+  border: 2px solid #10221b;
+  color: #10221b;
+}
+
+/************************ FOOTER ******************************/
+footer {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../images/monviso.jpg);
+  background-size: cover;
+  background-position: top;
+  background-attachment: fixed;
+  padding: 5rem 9%;
+}
+footer .box-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  gap: 1.5rem;
+}
+footer .box-container .box {
+  text-align: center;
+}
+footer .box-container .box h3 {
+  font-size: 2rem;
+  padding: 1.5rem 0;
+  color: #fff;
+}
+footer .box-container .box a {
+  display: block;
+  font-size: 1.4rem;
+  color: #fff;
+  padding: 1rem 0;
+}
+footer .box-container .box a i {
+  color: #219150;
+  padding-right: 0.5rem;
+}
+footer .box-container .box a:hover {
+  color: #219150;
+}
+footer .box-container .box a:hover i {
+  padding-right: 2rem;
+}
+footer .box-container .email {
+  text-transform: lowercase;
+}
+footer .credit {
+  text-align: center;
+  margin-top: 2.5rem;
+  padding: 1rem;
+  padding-top: 2.5rem;
+  font-size: 2rem;
+  color: #fff;
+}
+footer .credit span {
+  color: #219150;
+}
+
+/**************************** MEDIA QUERIS *************************************/
+@media (max-width: 1200px) {
+  .header {
+    padding: 2rem;
+  }
+  section {
+    padding: 3rem 2rem;
+  }
+}
+@media (max-width: 991px) {
+  html {
+    font-size: 55%;
+  }
+  .home .box {
+    padding: 2rem;
+    justify-content: center;
+  }
+  .home .box.second, .home .box.forth {
+    justify-content: center;
+  }
+  .home .box .content {
+    text-align: center;
+  }
+  .home .box .content span {
+    font-size: 3rem;
+  }
+  .home .box .content h3 {
+    font-size: 4rem;
+  }
+}
+@media (max-width: 768px) {
+  .header #menu-btn {
+    display: inline-block;
+  }
+  .header .menu {
+    position: fixed;
+    top: 0;
+    left: -110%;
+    background: #fff;
+    z-index: 1000;
+    width: 35rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .header .menu.active {
+    left: 0;
+    box-shadow: 0 0 0 100vw rgba(0, 0, 0, 0.8);
+    transition: all 1s;
+  }
+  .header .menu a {
+    margin: 1rem 0;
+    font-size: 3rem;
+  }
+  .header .menu #menu-close {
+    display: inline-block;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+  }
+  .swiper-button-next::after,
+.swiper-button-prev::after {
+    display: none;
+  }
+}
+@media (max-width: 450px) {
+  html {
+    font-size: 40%;
+  }
+  .section-heading {
+    font-size: 3rem;
+  }
+}/*# sourceMappingURL=styles.css.map */
